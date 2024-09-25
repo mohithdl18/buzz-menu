@@ -1,0 +1,87 @@
+.section-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.menu-item {
+    background-color: #212121;
+    box-shadow: 2px 2px 2px #ffffff42;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    /* Adjust to take up full container width */
+    max-width: 400px;
+    /* You can set the max width to match your original layout */
+    border-radius: 10px;
+    position: relative;
+}
+
+.menu-item::before {
+    content: '';
+    position: absolute;
+    right: 60px;
+    /* Adjust this value to control the line's position relative to the price */
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    height: 100%;
+    /* Make the line span the entire height of the menu-item */
+    border-left: 2px dotted #6c6a6a;
+    /* Dotted vertical line */
+}
+
+.item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 15px;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    /* Ensures the title spans properly */
+}
+
+.head span {
+    display: inline-block;
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.veg {
+    background-color: green;
+    box-shadow: 0 0 8px green;
+}
+
+.non-veg {
+    background-color: red;
+    box-shadow: 0 0 8px red;
+}
+
+.price {
+    font-size: 15px;
+    margin-left: 10px;
+    padding-left: 10px;
+    position: relative;
+}
