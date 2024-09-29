@@ -6,7 +6,7 @@ const Splash = ({ onLoaded }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       onLoaded(); // Trigger onLoaded when splash screen should disappear
-    }, 2000); // Set the timeout duration as needed
+    }, 3500); // Set the timeout duration as needed
 
     return () => clearTimeout(timeout);
   }, [onLoaded]);
