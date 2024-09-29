@@ -3,6 +3,7 @@ import Menu from "./Menu";
 import Categories from "./Categories";
 import items from "./data";
 import Navbar from "./Navbar";
+import Splash from "./Splash"; // Ensure this resolves correctly
 
 const allCategories = [...new Set(items.map((item) => item.category))];
 
@@ -11,25 +12,37 @@ const App = () => {
   const [menuItems, setMenuItems] = useState(
     items.filter((item) => item.category === activeCategory)
   );
-  const [categories, setCategories] = useState(allCategories);
+  const [categories] = useState(allCategories); // Remove setCategories to prevent warning
+  const [loading, setLoading] = useState(true); // State for splash screen
 
   const filterItems = (category) => {
     setActiveCategory(category);
     const newItems = items.filter((item) => item.category === category);
     setMenuItems(newItems);
   };
+
+  const handleSplashLoaded = () => {
+    setLoading(false); // Hide splash screen after loading
+  };
+
   return (
-    <main>
-      <section className="container">
-        <Navbar />
-        <Categories
-          categories={categories}
-          activeCategory={activeCategory}
-          filterItems={filterItems}
-        />
-        <Menu items={menuItems} />
-      </section>
-    </main>
+    <>
+      {loading ? (
+        <Splash onLoaded={handleSplashLoaded} />
+      ) : (
+        <main>
+          <section className="container">
+            <Navbar />
+            <Categories
+              categories={categories}
+              activeCategory={activeCategory}
+              filterItems={filterItems}
+            />
+            <Menu items={menuItems} />
+          </section>
+        </main>
+      )}
+    </>
   );
 };
 
