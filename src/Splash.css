@@ -1,0 +1,79 @@
+/* SplashScreen.css */
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1b1b1b;
+  animation: fadeOut 0.5s ease-in-out 3.5s forwards;
+  padding: 20px;
+  font-family: "Abril Fatface", serif;
+  /* -webkit-text-fill-color: yellow; */
+}
+
+.splash-logo {
+  width: 360px;
+  animation: zoomIn 1s ease-in-out;
+}
+
+.splash-text {
+  font-size: 24px;
+  margin-top: 40px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  color: #FFD100;
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+}
+
+/* .splash-text h3 {
+  font-family: "Montserrat", sans-serif;
+  -webkit-text-fill-color: #deb6056e;
+} */
+
+/* .splash-text h1 {
+  text-shadow: 0.5px 4px 4px #deb6056e;
+} */
+
+.splash-text h3 {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.v {
+  color: green;
+}
+
+.n {
+  color: red;
+}
+
+
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
