@@ -3,7 +3,8 @@ import Menu from "./Menu";
 import Categories from "./Categories";
 import items from "./data";
 import Navbar from "./Navbar";
-import Splash from "./Splash"; // Ensure this resolves correctly
+import Splash from "./Splash";
+import Footer from "./Footer";
 
 const allCategories = [...new Set(items.map((item) => item.category))];
 
@@ -12,8 +13,8 @@ const App = () => {
   const [menuItems, setMenuItems] = useState(
     items.filter((item) => item.category === activeCategory)
   );
-  const [categories] = useState(allCategories); // Remove setCategories to prevent warning
-  const [loading, setLoading] = useState(true); // State for splash screen
+  const [categories] = useState(allCategories);
+  const [loading, setLoading] = useState(true);
 
   const filterItems = (category) => {
     setActiveCategory(category);
@@ -40,6 +41,7 @@ const App = () => {
             />
             <Menu items={menuItems} />
           </section>
+          <Footer /> {/* Add Footer here */}
         </main>
       )}
     </>
