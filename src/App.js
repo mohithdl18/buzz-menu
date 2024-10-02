@@ -42,7 +42,6 @@ const App = () => {
             <Menu items={menuItems} />
           </section>
           <Footer />
-          <Footer /> {/* Add Footer here */}
         </main>
       )}
     </>
